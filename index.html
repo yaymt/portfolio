@@ -1,56 +1,41 @@
 <!doctype html>
-<html lang="ar" dir="rtl" id="html-root">
+<html lang="en">
   <head>
-    <!-- ==========================================================
-    PART 1: META TAGS & SEO
-    ========================================================== -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title id="page-title">يوسف توفيق · Portfolio</title>
+    <title>Yousef Tawfiq · Portfolio</title>
     <meta
       name="description"
-      id="page-desc"
       content="Personal portfolio of Yousef Tawfiq — Computer & Network Engineering Student."
     />
     <meta name="theme-color" content="#0f172a" />
-    <meta property="og:title" id="og-title" content="يوسف توفيق · Portfolio" />
-    <meta
-      property="og:description"
-      id="og-desc"
-      content="Computer & Network Engineering Student — Cybersecurity, AI, Drones, Programming."
-    />
     <link rel="icon" href="public/images/favicon.ico" />
-
-    <!-- ==========================================================
-    PART 2: FONTS & ICONS
-    ========================================================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Cairo:wght@400;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-
-    <!-- ==========================================================
-    PART 3: MAIN STYLESHEET
-    ========================================================== -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- ==========================================================
-    PART 4: NAVIGATION
-    ========================================================== -->
-    <nav class="navbar" role="navigation" aria-label="القائمة الرئيسية">
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ============================================================
+    NAVIGATION
+    ============================================================ -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
       <div class="container nav-container">
-        <a href="#" class="nav-logo" aria-label="الرئيسية">YT</a>
+        <a href="index.html" class="nav-logo" aria-label="Home">YT</a>
         <button
           class="nav-toggle"
           id="navToggle"
-          aria-label="تبديل القائمة"
+          aria-label="Toggle navigation"
           aria-expanded="false"
         >
           <span class="hamburger"></span>
@@ -58,66 +43,30 @@
           <span class="hamburger"></span>
         </button>
         <ul class="nav-links" id="navLinks" role="menubar">
+          <li role="none"><a href="#about" role="menuitem">About</a></li>
+          <li role="none"><a href="#skills" role="menuitem">Skills</a></li>
+          <li role="none"><a href="#projects" role="menuitem">Projects</a></li>
           <li role="none">
-            <a href="#about" role="menuitem" data-ar="عني" data-en="About"
-              >عني</a
-            >
+            <a href="#certifications" role="menuitem">Certifications</a>
           </li>
-          <li role="none">
-            <a
-              href="#skills"
-              role="menuitem"
-              data-ar="المهارات"
-              data-en="Skills"
-              >المهارات</a
-            >
-          </li>
-          <li role="none">
-            <a
-              href="#projects"
-              role="menuitem"
-              data-ar="المشاريع"
-              data-en="Projects"
-              >المشاريع</a
-            >
-          </li>
-          <li role="none">
-            <a
-              href="#certifications"
-              role="menuitem"
-              data-ar="الشهادات"
-              data-en="Certifications"
-              >الشهادات</a
-            >
-          </li>
-          <li role="none">
-            <a href="#contact" role="menuitem" data-ar="تواصل" data-en="Contact"
-              >تواصل</a
-            >
-          </li>
+          <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
         </ul>
-        <div class="nav-actions">
-          <button class="lang-toggle" id="langToggle" aria-label="تبديل اللغة">
-            <i class="fas fa-globe"></i>
-            <span id="langLabel">EN</span>
-          </button>
-          <button
-            class="theme-toggle"
-            id="themeToggle"
-            aria-label="تبديل الوضع المظلم/الفاتح"
-          >
-            <i class="fas fa-moon" id="themeIcon"></i>
-          </button>
-        </div>
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          aria-label="Toggle dark/light mode"
+        >
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
       </div>
     </nav>
 
-    <!-- ==========================================================
-    PART 5: MAIN CONTENT (skip link target)
-    ========================================================== -->
+    <!-- ============================================================
+    MAIN CONTENT
+    ============================================================ -->
     <main id="main-content">
       <!-- ==========================================================
-        PART 6: HERO SECTION
+        HERO SECTION
         ========================================================== -->
       <header class="hero" id="hero" role="banner">
         <div class="container hero-container">
@@ -125,61 +74,46 @@
             <div class="hero-avatar">
               <span class="avatar-initials">YT</span>
             </div>
-            <h1 class="hero-name" id="heroName">يوسف توفيق</h1>
-            <p class="hero-title" id="heroTitle">طالب هندسة شبكات وحاسوب</p>
+            <h1 class="hero-name">Yousef Tawfiq</h1>
+            <p class="hero-title">Computer &amp; Network Engineering Student</p>
             <p class="hero-bio" id="heroBio">
-              الأمن السيبراني · الذكاء الاصطناعي · الروبوتات · البرمجة
+              Cybersecurity · AI · Robotics · Programming
             </p>
             <div class="hero-social" id="heroSocial"></div>
             <div class="hero-stats" id="heroStats"></div>
-            <a href="#projects" class="btn btn-primary hero-cta" id="heroCta">
-              <span data-ar="عرض أعمالي" data-en="View My Work"
-                >عرض أعمالي</span
-              >
-              <i class="fas fa-arrow-left" id="ctaArrow"></i>
-            </a>
+            <a href="#projects" class="btn btn-primary hero-cta"
+              >View My Work <i class="fas fa-arrow-right"></i
+            ></a>
           </div>
         </div>
       </header>
 
       <!-- ==========================================================
-        PART 7: ABOUT SECTION
+        ABOUT SECTION
         ========================================================== -->
       <section class="section about" id="about" aria-labelledby="about-title">
         <div class="container">
-          <h2
-            class="section-title"
-            id="about-title"
-            data-ar="عني"
-            data-en="About Me"
-          >
-            عني
-          </h2>
+          <h2 class="section-title" id="about-title">About Me</h2>
           <div class="about-grid">
             <div class="about-text" id="aboutText"></div>
             <div class="about-info" id="aboutInfo"></div>
           </div>
-          <!-- زر تحميل السيرة الذاتية -->
-          <div class="resume-download" id="resumeDownload">
+          <div class="resume-download">
             <a
               href="#"
               id="resumeLink"
               class="btn btn-primary resume-btn"
               target="_blank"
+              aria-label="Download CV (PDF)"
             >
-              <i class="fas fa-file-pdf"></i>
-              <span
-                data-ar="تحميل السيرة الذاتية (PDF)"
-                data-en="Download CV (PDF)"
-                >تحميل السيرة الذاتية (PDF)</span
-              >
+              <i class="fas fa-file-pdf"></i> Download CV (PDF)
             </a>
           </div>
         </div>
       </section>
 
       <!-- ==========================================================
-        PART 8: SKILLS SECTION
+        SKILLS SECTION
         ========================================================== -->
       <section
         class="section skills"
@@ -187,20 +121,13 @@
         aria-labelledby="skills-title"
       >
         <div class="container">
-          <h2
-            class="section-title"
-            id="skills-title"
-            data-ar="المهارات التقنية"
-            data-en="Technical Skills"
-          >
-            المهارات التقنية
-          </h2>
+          <h2 class="section-title" id="skills-title">Technical Skills</h2>
           <div class="skills-grid" id="skillsGrid"></div>
         </div>
       </section>
 
       <!-- ==========================================================
-        PART 9: PROJECTS SECTION
+        PROJECTS SECTION
         ========================================================== -->
       <section
         class="section projects"
@@ -208,30 +135,16 @@
         aria-labelledby="projects-title"
       >
         <div class="container">
-          <h2
-            class="section-title"
-            id="projects-title"
-            data-ar="المشاريع"
-            data-en="Projects"
-          >
-            المشاريع
-          </h2>
+          <h2 class="section-title" id="projects-title">Projects</h2>
           <div class="project-filters" id="projectFilters">
-            <button
-              class="filter-btn active"
-              data-filter="all"
-              data-ar="الكل"
-              data-en="All"
-            >
-              الكل
-            </button>
+            <button class="filter-btn active" data-filter="all">All</button>
           </div>
           <div class="projects-grid" id="projectsGrid"></div>
         </div>
       </section>
 
       <!-- ==========================================================
-        PART 10: CERTIFICATIONS SECTION
+        CERTIFICATIONS SECTION
         ========================================================== -->
       <section
         class="section certifications"
@@ -239,20 +152,13 @@
         aria-labelledby="certs-title"
       >
         <div class="container">
-          <h2
-            class="section-title"
-            id="certs-title"
-            data-ar="الشهادات"
-            data-en="Certifications"
-          >
-            الشهادات
-          </h2>
+          <h2 class="section-title" id="certs-title">Certifications</h2>
           <div class="cert-grid" id="certGrid"></div>
         </div>
       </section>
 
       <!-- ==========================================================
-        PART 11: CONTACT SECTION
+        CONTACT SECTION
         ========================================================== -->
       <section
         class="section contact"
@@ -260,49 +166,31 @@
         aria-labelledby="contact-title"
       >
         <div class="container">
-          <h2
-            class="section-title"
-            id="contact-title"
-            data-ar="تواصل معي"
-            data-en="Get In Touch"
-          >
-            تواصل معي
-          </h2>
+          <h2 class="section-title" id="contact-title">Get In Touch</h2>
           <div class="contact-wrapper">
             <div class="contact-info">
-              <p
-                class="contact-message"
-                id="contactMsg"
-                data-ar="لديك سؤال أو ترغب في العمل معاً؟ لا تتردد في التواصل عبر أي من القنوات التالية."
-                data-en="Have a question or want to work together? Feel free to reach out through any of the channels below."
-              >
-                لديك سؤال أو ترغب في العمل معاً؟ لا تتردد في التواصل عبر أي من
-                القنوات التالية.
+              <p class="contact-message">
+                Have a question or want to work together? Feel free to reach out
+                through any of the channels below.
               </p>
               <ul class="contact-details">
                 <li>
                   <i class="fas fa-envelope"></i>
                   <div>
-                    <strong data-ar="البريد الإلكتروني" data-en="Email"
-                      >البريد الإلكتروني</strong
-                    >
+                    <strong>Email</strong>
                     <span id="contactEmail">yawfiq@outlook.com</span>
                   </div>
                 </li>
                 <li>
                   <i class="fas fa-phone-alt"></i>
                   <div>
-                    <strong data-ar="الهاتف" data-en="Phone">الهاتف</strong>
+                    <strong>Phone</strong>
                     <span>+966 566 876 346</span>
                   </div>
                 </li>
               </ul>
               <div class="contact-social">
-                <p>
-                  <strong data-ar="وسائل التواصل" data-en="Social Media"
-                    >وسائل التواصل</strong
-                  >
-                </p>
+                <p><strong>Social Media</strong></p>
                 <div id="contactSocialLinks"></div>
               </div>
             </div>
@@ -311,60 +199,33 @@
       </section>
     </main>
 
-    <!-- ==========================================================
-    PART 12: PROJECT DETAILS OVERLAY
-    ========================================================== -->
-    <div
-      class="project-details-overlay"
-      id="projectDetailsOverlay"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="details-title"
-    >
-      <div class="project-details-modal">
-        <button
-          class="details-close"
-          id="detailsClose"
-          aria-label="إغلاق تفاصيل المشروع"
-        >
-          <i class="fas fa-times"></i>
-        </button>
-        <div class="project-details-content" id="projectDetailsContent"></div>
-      </div>
-    </div>
-
-    <!-- ==========================================================
-    PART 13: FOOTER
-    ========================================================== -->
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
     <footer class="footer" role="contentinfo">
       <div class="container">
         <div class="footer-content">
           <p class="footer-name">
-            &copy; <span id="footerYear"></span>
-            <span data-ar="يوسف توفيق" data-en="Yousef Tawfiq">يوسف توفيق</span>
+            &copy; <span id="footerYear"></span> Yousef Tawfiq
           </p>
-          <p
-            class="footer-tagline"
-            data-ar="نبني المستقبل، سطراً بعد سطر."
-            data-en="Building the future, one line of code at a time."
-          >
-            نبني المستقبل، سطراً بعد سطر.
+          <p class="footer-tagline">
+            Building the future, one line of code at a time.
           </p>
           <div class="footer-social" id="footerSocial"></div>
         </div>
       </div>
     </footer>
 
-    <!-- ==========================================================
-    PART 14: BACK TO TOP BUTTON
-    ========================================================== -->
-    <button id="backToTop" aria-label="العودة للأعلى">
+    <!-- ============================================================
+    BACK TO TOP BUTTON
+    ============================================================ -->
+    <button id="backToTop" aria-label="Back to top">
       <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- ==========================================================
-    PART 15: JAVASCRIPT
-    ========================================================== -->
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
     <script src="js/main.js"></script>
   </body>
 </html>

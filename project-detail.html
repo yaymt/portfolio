@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="pageTitle">Project Details · Yousef Tawfiq</title>
+    <meta name="description" content="Project details page" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="icon" href="public/images/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* تنسيقات إضافية للصفحة المستقلة */
+      .project-detail-page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .project-detail-page .container {
+        flex: 1;
+      }
+      .project-detail-page .footer {
+        margin-top: auto;
+      }
+      .project-detail-back {
+        margin-bottom: 30px;
+      }
+      .project-detail-back .btn-outline {
+        background: transparent;
+        border: 2px solid var(--border);
+        color: var(--text-primary);
+        padding: 10px 24px;
+        border-radius: 40px;
+        font-weight: 500;
+        transition: all var(--transition);
+        font-family: var(--font);
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+      }
+      .project-detail-back .btn-outline:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+        transform: translateX(-4px);
+      }
+      .project-detail-content {
+        padding: 20px 0 60px;
+      }
+      .project-not-found {
+        text-align: center;
+        padding: 80px 0;
+        color: var(--text-secondary);
+      }
+      .project-not-found a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      .project-not-found a:hover {
+        text-decoration: underline;
+      }
+
+      /* إخفاء عناصر التنقل غير الضرورية في هذه الصفحة */
+      .project-detail-page .hero,
+      .project-detail-page .about,
+      .project-detail-page .skills,
+      .project-detail-page .projects,
+      .project-detail-page .certifications,
+      .project-detail-page .contact {
+        display: none !important;
+      }
+      .project-detail-page .navbar .nav-links {
+        display: none !important;
+      }
+      /* إظهار زر العودة في مكانه */
+      .project-detail-page .navbar .nav-container {
+        justify-content: space-between;
+      }
+      .project-detail-page .navbar .nav-actions {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body class="project-detail-page">
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="container nav-container">
+        <a href="index.html" class="nav-logo" aria-label="Home">YT</a>
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle dark/light mode"
+          >
+            <i class="fas fa-moon" id="themeIcon"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="container">
+      <div class="project-detail-back">
+        <a href="index.html#projects" class="btn-outline">
+          <i class="fas fa-arrow-left"></i> Back to Projects
+        </a>
+      </div>
+      <div id="projectDetailContent" class="project-detail-content">
+        <p
+          style="
+            text-align: center;
+            color: var(--text-secondary);
+            padding: 60px 0;
+          "
+        >
+          Loading project details...
+        </p>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-content">
+          <p class="footer-name">
+            &copy; <span id="footerYear"></span> Yousef Tawfiq
+          </p>
+          <p class="footer-tagline">
+            Building the future, one line of code at a time.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/project-detail.js"></script>
+  </body>
+</html>
