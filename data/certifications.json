@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Introduction to Cybersecurity",
+    "issuer": "Cisco Networking Academy",
+    "date": "2024-05-15",
+    "credentialUrl": "https://www.netacad.com/courses/cybersecurity/introduction-cybersecurity",
+    "image": "public/images/certs/cisco-cyber.jpg"
+  },
+  {
+    "name": "Fundamentals of Artificial Intelligence",
+    "issuer": "SDAIA",
+    "date": "2024-03-10",
+    "credentialUrl": "https://sdaia.gov.sa/en/ai-academy",
+    "image": "public/images/certs/sdaia-ai.jpg"
+  },
+  {
+    "name": "Printed Circuit Board (PCB) Design",
+    "issuer": "Udemy",
+    "date": "2024-02-20",
+    "credentialUrl": "https://www.udemy.com/certificate/pcb-design",
+    "image": "public/images/certs/pcb-design.jpg"
+  },
+  {
+    "name": "System Administration I (RH124)",
+    "issuer": "Red Hat",
+    "date": "2024-01-15",
+    "credentialUrl": "https://www.redhat.com/en/services/training/rh124-red-hat-system-administration-i",
+    "image": "public/images/certs/redhat.jpg"
+  }
+]

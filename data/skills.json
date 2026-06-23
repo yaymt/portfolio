@@ -1,0 +1,16 @@
+[
+  { "name": "Java (OOP)", "icon": "fab fa-java" },
+  { "name": "Python", "icon": "fab fa-python" },
+  { "name": "C/C++", "icon": "fas fa-code" },
+  { "name": "HTML", "icon": "fab fa-html5" },
+  { "name": "Networking", "icon": "fas fa-network-wired" },
+  { "name": "Cybersecurity", "icon": "fas fa-shield-halved" },
+  { "name": "IoT", "icon": "fas fa-microchip" },
+  { "name": "Arduino", "icon": "fas fa-microcontroller" },
+  { "name": "Database", "icon": "fas fa-database" },
+  { "name": "Git & GitHub", "icon": "fab fa-git-alt" },
+  { "name": "PCB Design", "icon": "fas fa-microchip" },
+  { "name": "Linux", "icon": "fab fa-linux" },
+  { "name": "Tinkercad", "icon": "fas fa-cube" },
+  { "name": "VS Code", "icon": "fas fa-code" }
+]

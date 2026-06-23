@@ -1,0 +1,22 @@
+[
+  {
+    "platform": "GitHub",
+    "url": "https://github.com/yousef",
+    "icon": "fab fa-github"
+  },
+  {
+    "platform": "LinkedIn",
+    "url": "https://linkedin.com/in/yousef",
+    "icon": "fab fa-linkedin-in"
+  },
+  {
+    "platform": "Twitter",
+    "url": "https://twitter.com/yousef",
+    "icon": "fab fa-twitter"
+  },
+  {
+    "platform": "YouTube",
+    "url": "https://youtube.com/@yousef",
+    "icon": "fab fa-youtube"
+  }
+]

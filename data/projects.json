@@ -1,0 +1,73 @@
+[
+  {
+    "id": 1,
+    "title": "To-Do List Application",
+    "description": "Designed and developed a GUI-based To-Do List application using Java with Swing. Implemented 5+ core features (add, edit, delete, and display tasks) with OOP principles.",
+    "category": "Programming",
+    "technologies": ["Java", "Swing", "OOP"],
+    "features": [
+      "Add, edit, delete, and display tasks",
+      "User-friendly GUI interface",
+      "Task organization and prioritization",
+      "Improved task management efficiency by ~30%",
+      "Achieved 100% project score"
+    ],
+    "github": "https://github.com/yousef/todo-list",
+    "demo": null,
+    "youtube": null,
+    "docs": null,
+    "thumbnail": "public/images/projects/todo-list.jpg",
+    "gallery": [
+      "public/images/projects/todo-list1.jpg",
+      "public/images/projects/todo-list2.jpg"
+    ],
+    "date": "2024-12-15"
+  },
+  {
+    "id": 2,
+    "title": "Electrical Circuit Simulation",
+    "description": "Designed and simulated 5+ electrical circuits using Tinkercad. Analyzed voltage, current, and resistance behavior across circuit components.",
+    "category": "Electronics",
+    "technologies": ["Tinkercad", "Electronics", "Circuit Design"],
+    "features": [
+      "Designed 5+ electrical circuits",
+      "Voltage, current, and resistance analysis",
+      "Practical application of theoretical concepts",
+      "Troubleshooting and optimization"
+    ],
+    "github": null,
+    "demo": null,
+    "youtube": null,
+    "docs": null,
+    "thumbnail": "public/images/projects/circuit-sim.jpg",
+    "gallery": [
+      "public/images/projects/circuit-sim1.jpg",
+      "public/images/projects/circuit-sim2.jpg"
+    ],
+    "date": "2024-10-20"
+  },
+  {
+    "id": 3,
+    "title": "Robotic Arm Control System",
+    "description": "Developed a control system for a robotic arm using Arduino. Programmed microcontrollers (C/C++) to control motors and execute precise movements with position sensors.",
+    "category": "Robotics",
+    "technologies": ["Arduino", "C/C++", "Robotics", "Sensors"],
+    "features": [
+      "4-axis robotic arm control",
+      "Position tracking using sensors",
+      "Pre-programmed motion sequences",
+      "Simple and user-friendly control interface",
+      "Integration with automation systems"
+    ],
+    "github": "https://github.com/yousef/robotic-arm",
+    "demo": null,
+    "youtube": null,
+    "docs": null,
+    "thumbnail": "public/images/projects/robotic-arm.jpg",
+    "gallery": [
+      "public/images/projects/robotic-arm1.jpg",
+      "public/images/projects/robotic-arm2.jpg"
+    ],
+    "date": "2024-08-30"
+  }
+]

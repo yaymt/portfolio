@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "How AI is Transforming Cybersecurity",
+    "excerpt": "Discover how artificial intelligence is revolutionizing the way we detect and respond to cyber threats in real-time.",
+    "date": "2025-02-10",
+    "readTime": "5 min read",
+    "category": "AI & Security",
+    "image": "public/images/blog/ai-cybersecurity.jpg",
+    "link": "#"
+  },
+  {
+    "id": 2,
+    "title": "Building My First Arduino Project",
+    "excerpt": "From choosing components to writing the code, here's everything I learned building my first Arduino-based automation system.",
+    "date": "2025-01-25",
+    "readTime": "8 min read",
+    "category": "IoT & Embedded",
+    "image": "public/images/blog/arduino-first.jpg",
+    "link": "#"
+  },
+  {
+    "id": 3,
+    "title": "Understanding Java OOP Principles",
+    "excerpt": "A beginner-friendly guide to Object-Oriented Programming in Java with practical examples from real projects.",
+    "date": "2025-01-05",
+    "readTime": "6 min read",
+    "category": "Programming",
+    "image": "public/images/blog/java-oop.jpg",
+    "link": "#"
+  }
+]
