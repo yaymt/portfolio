@@ -1,22 +1,22 @@
 [
   {
     "platform": "GitHub",
-    "url": "https://github.com/yousef",
+    "url": "https://github.com/yaymt",
     "icon": "fab fa-github"
   },
   {
     "platform": "LinkedIn",
-    "url": "https://linkedin.com/in/yousef",
+    "url": "https://www.linkedin.com/in/yousef-tawfiq",
     "icon": "fab fa-linkedin-in"
   },
   {
-    "platform": "Twitter",
-    "url": "https://twitter.com/yousef",
-    "icon": "fab fa-twitter"
+    "platform": "x",
+    "url": "https://x.com/yaymt1",
+    "icon": "fab fa-x"
   },
   {
     "platform": "YouTube",
-    "url": "https://youtube.com/@yousef",
+    "url": "https://www.youtube.com/@yaymt",
     "icon": "fab fa-youtube"
   }
 ]

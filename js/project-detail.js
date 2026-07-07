@@ -38,6 +38,47 @@ themeToggle.addEventListener("click", () => {
   }
 });
 
+// ===== IMAGE ZOOM (duplicate from main.js) =====
+const zoomOverlay = document.getElementById("imageZoom");
+const zoomImg = document.getElementById("imageZoomImg");
+const zoomClose = document.getElementById("imageZoomClose");
+
+function openImageZoom(src) {
+  zoomImg.src = src;
+  zoomOverlay.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeImageZoom() {
+  zoomOverlay.classList.remove("active");
+  document.body.style.overflow = "";
+  setTimeout(() => {
+    zoomImg.src = "";
+  }, 300);
+}
+
+zoomClose.addEventListener("click", closeImageZoom);
+zoomOverlay.addEventListener("click", function (e) {
+  if (e.target === this) closeImageZoom();
+});
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") closeImageZoom();
+});
+
+function attachZoomToDetailImages() {
+  document.querySelectorAll(".details-gallery img").forEach((img) => {
+    img.style.cursor = "zoom-in";
+    img.removeEventListener("click", handleZoomDetail);
+    img.addEventListener("click", handleZoomDetail);
+  });
+}
+
+function handleZoomDetail(e) {
+  e.stopPropagation();
+  const src = this.getAttribute("src");
+  if (src) openImageZoom(src);
+}
+
 // ===== BUILD DETAILS HTML =====
 function buildDetailsHTML(project) {
   const thumb = project.thumbnail || "public/images/placeholder.jpg";
@@ -49,7 +90,7 @@ function buildDetailsHTML(project) {
                 ${project.gallery
                   .map(
                     (img) => `
-                    <img src="${img}" alt="${project.title}" loading="lazy" onclick="window.open('${img}','_blank')" />
+                    <img src="${img}" alt="${project.title}" loading="lazy" />
                 `,
                   )
                   .join("")}
@@ -178,6 +219,8 @@ async function renderProjectDetail() {
   }
 
   container.innerHTML = buildDetailsHTML(project);
+  // Attach zoom after content is rendered
+  attachZoomToDetailImages();
 }
 
 // ===== FOOTER YEAR =====

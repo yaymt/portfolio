@@ -18,80 +18,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <style>
-      /* تنسيقات إضافية للصفحة المستقلة */
-      .project-detail-page {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-      }
-      .project-detail-page .container {
-        flex: 1;
-      }
-      .project-detail-page .footer {
-        margin-top: auto;
-      }
-      .project-detail-back {
-        margin-bottom: 30px;
-      }
-      .project-detail-back .btn-outline {
-        background: transparent;
-        border: 2px solid var(--border);
-        color: var(--text-primary);
-        padding: 10px 24px;
-        border-radius: 40px;
-        font-weight: 500;
-        transition: all var(--transition);
-        font-family: var(--font);
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        text-decoration: none;
-      }
-      .project-detail-back .btn-outline:hover {
-        border-color: var(--accent);
-        color: var(--accent);
-        transform: translateX(-4px);
-      }
-      .project-detail-content {
-        padding: 20px 0 60px;
-      }
-      .project-not-found {
-        text-align: center;
-        padding: 80px 0;
-        color: var(--text-secondary);
-      }
-      .project-not-found a {
-        color: var(--accent);
-        text-decoration: none;
-      }
-      .project-not-found a:hover {
-        text-decoration: underline;
-      }
-
-      /* إخفاء عناصر التنقل غير الضرورية في هذه الصفحة */
-      .project-detail-page .hero,
-      .project-detail-page .about,
-      .project-detail-page .skills,
-      .project-detail-page .projects,
-      .project-detail-page .certifications,
-      .project-detail-page .contact {
-        display: none !important;
-      }
-      .project-detail-page .navbar .nav-links {
-        display: none !important;
-      }
-      /* إظهار زر العودة في مكانه */
-      .project-detail-page .navbar .nav-container {
-        justify-content: space-between;
-      }
-      .project-detail-page .navbar .nav-actions {
-        display: flex;
-        gap: 12px;
-        align-items: center;
-      }
-    </style>
+    <link rel="stylesheet" href="css/project-detail.css" />
   </head>
   <body class="project-detail-page">
     <!-- Navigation -->
@@ -143,6 +70,18 @@
         </div>
       </div>
     </footer>
+
+    <!-- ===== IMAGE ZOOM MODAL (same as index) ===== -->
+    <div class="image-zoom-overlay" id="imageZoom">
+      <button
+        class="image-zoom-close"
+        id="imageZoomClose"
+        aria-label="Close image"
+      >
+        <i class="fas fa-times"></i>
+      </button>
+      <img src="" alt="Zoomed image" id="imageZoomImg" />
+    </div>
 
     <script src="js/project-detail.js"></script>
   </body>

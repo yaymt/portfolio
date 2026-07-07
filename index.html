@@ -23,12 +23,9 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- Skip link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- ============================================================
-    NAVIGATION
-    ============================================================ -->
+    <!-- NAVIGATION -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
       <div class="container nav-container">
         <a href="index.html" class="nav-logo" aria-label="Home">YT</a>
@@ -61,13 +58,9 @@
       </div>
     </nav>
 
-    <!-- ============================================================
-    MAIN CONTENT
-    ============================================================ -->
+    <!-- MAIN -->
     <main id="main-content">
-      <!-- ==========================================================
-        HERO SECTION
-        ========================================================== -->
+      <!-- HERO -->
       <header class="hero" id="hero" role="banner">
         <div class="container hero-container">
           <div class="hero-content">
@@ -88,9 +81,7 @@
         </div>
       </header>
 
-      <!-- ==========================================================
-        ABOUT SECTION
-        ========================================================== -->
+      <!-- ABOUT -->
       <section class="section about" id="about" aria-labelledby="about-title">
         <div class="container">
           <h2 class="section-title" id="about-title">About Me</h2>
@@ -112,9 +103,7 @@
         </div>
       </section>
 
-      <!-- ==========================================================
-        SKILLS SECTION
-        ========================================================== -->
+      <!-- SKILLS -->
       <section
         class="section skills"
         id="skills"
@@ -126,9 +115,7 @@
         </div>
       </section>
 
-      <!-- ==========================================================
-        PROJECTS SECTION
-        ========================================================== -->
+      <!-- PROJECTS -->
       <section
         class="section projects"
         id="projects"
@@ -143,9 +130,7 @@
         </div>
       </section>
 
-      <!-- ==========================================================
-        CERTIFICATIONS SECTION
-        ========================================================== -->
+      <!-- CERTIFICATIONS -->
       <section
         class="section certifications"
         id="certifications"
@@ -157,9 +142,7 @@
         </div>
       </section>
 
-      <!-- ==========================================================
-        CONTACT SECTION
-        ========================================================== -->
+      <!-- CONTACT -->
       <section
         class="section contact"
         id="contact"
@@ -199,9 +182,7 @@
       </section>
     </main>
 
-    <!-- ============================================================
-    FOOTER
-    ============================================================ -->
+    <!-- FOOTER -->
     <footer class="footer" role="contentinfo">
       <div class="container">
         <div class="footer-content">
@@ -216,16 +197,23 @@
       </div>
     </footer>
 
-    <!-- ============================================================
-    BACK TO TOP BUTTON
-    ============================================================ -->
+    <!-- BACK TO TOP -->
     <button id="backToTop" aria-label="Back to top">
       <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- ============================================================
-    JAVASCRIPT
-    ============================================================ -->
+    <!-- ===== IMAGE ZOOM MODAL ===== -->
+    <div class="image-zoom-overlay" id="imageZoom">
+      <button
+        class="image-zoom-close"
+        id="imageZoomClose"
+        aria-label="Close image"
+      >
+        <i class="fas fa-times"></i>
+      </button>
+      <img src="" alt="Zoomed image" id="imageZoomImg" />
+    </div>
+
     <script src="js/main.js"></script>
   </body>
 </html>

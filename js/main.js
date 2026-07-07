@@ -140,22 +140,18 @@ async function renderProfile() {
   const data = await fetchJSON(DATA_PATH.profile);
   if (!data) return;
 
-  // Hero
   document.querySelector(".hero-name").textContent = data.name;
   document.querySelector(".hero-title").textContent = data.title;
   document.getElementById("heroBio").textContent = data.bio;
 
-  // About
   document.getElementById("aboutText").innerHTML = `<p>${data.about}</p>`;
   document.getElementById("aboutInfo").innerHTML = `
         <p><i class="fas fa-location-dot"></i> ${data.location || ""}</p>
         <p><i class="fas fa-envelope"></i> <a href="mailto:${data.email}">${data.email}</a></p>
     `;
 
-  // Contact
   document.getElementById("contactEmail").textContent = data.email;
 
-  // Resume
   const resumeLink = document.getElementById("resumeLink");
   if (resumeLink && data.resume) {
     resumeLink.href = data.resume;
@@ -184,7 +180,6 @@ async function renderSocials() {
 
   document.getElementById("heroSocial").innerHTML = html;
   document.getElementById("footerSocial").innerHTML = html;
-
   const contactSocial = document.getElementById("contactSocialLinks");
   if (contactSocial) contactSocial.innerHTML = html;
 }
@@ -214,7 +209,7 @@ async function renderSkills() {
 }
 
 // ============================================================
-// RENDER STATS (Projects & Certifications count)
+// RENDER STATS
 // ============================================================
 async function renderStats() {
   const projects = await fetchJSON(DATA_PATH.projects);
@@ -235,6 +230,80 @@ async function renderStats() {
   document
     .querySelectorAll(".hero-stats .stat-item")
     .forEach((el) => observer.observe(el));
+}
+
+// ============================================================
+// IMAGE ZOOM FUNCTIONALITY
+// ============================================================
+const zoomOverlay = document.getElementById("imageZoom");
+const zoomImg = document.getElementById("imageZoomImg");
+const zoomClose = document.getElementById("imageZoomClose");
+
+function openImageZoom(src) {
+  zoomImg.src = src;
+  zoomOverlay.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeImageZoom() {
+  zoomOverlay.classList.remove("active");
+  document.body.style.overflow = "";
+  // Clear src to prevent flickering
+  setTimeout(() => {
+    zoomImg.src = "";
+  }, 300);
+}
+
+zoomClose.addEventListener("click", closeImageZoom);
+zoomOverlay.addEventListener("click", function (e) {
+  if (e.target === this) closeImageZoom();
+});
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") closeImageZoom();
+});
+
+// Attach zoom to all images with class 'zoomable'
+function attachZoomToImages() {
+  // Thumbnails in project cards
+  document.querySelectorAll(".project-thumb").forEach((img) => {
+    img.classList.add("zoomable");
+    img.style.cursor = "zoom-in";
+    img.removeEventListener("click", handleZoomClick);
+    img.addEventListener("click", handleZoomClick);
+  });
+
+  // Gallery images in project details (if any)
+  document
+    .querySelectorAll(".details-gallery img, .modal-gallery img")
+    .forEach((img) => {
+      img.classList.add("zoomable");
+      img.style.cursor = "zoom-in";
+      img.removeEventListener("click", handleZoomClick);
+      img.addEventListener("click", handleZoomClick);
+    });
+
+  // Also handle overlay click on thumbnails
+  document.querySelectorAll(".project-overlay").forEach((overlay) => {
+    overlay.style.cursor = "zoom-in";
+    overlay.removeEventListener("click", handleOverlayZoom);
+    overlay.addEventListener("click", handleOverlayZoom);
+  });
+}
+
+function handleZoomClick(e) {
+  e.stopPropagation();
+  const src = this.getAttribute("src");
+  if (src) openImageZoom(src);
+}
+
+function handleOverlayZoom(e) {
+  e.stopPropagation();
+  const wrap = this.closest(".project-thumb-wrap");
+  const img = wrap ? wrap.querySelector(".project-thumb") : null;
+  if (img) {
+    const src = img.getAttribute("src");
+    if (src) openImageZoom(src);
+  }
 }
 
 // ============================================================
@@ -272,17 +341,26 @@ async function renderProjects(filter = "all") {
             day: "numeric",
           })
         : "";
+      const featuresCount = p.features ? p.features.length : 0;
 
       return `
-            <div class="project-card fade-up" style="transition-delay:${i * 0.05}s" data-project-id="${p.id}">
-                <img src="${p.thumbnail || "public/images/placeholder.jpg"}" alt="${p.title}" class="project-thumb" loading="lazy" />
+            <div class="project-card fade-up" style="transition-delay:${i * 0.05}s">
+                <div class="project-thumb-wrap">
+                    <img src="${p.thumbnail || "public/images/placeholder.jpg"}" alt="${p.title}" class="project-thumb" loading="lazy" />
+                    <div class="project-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
                 <div class="project-body">
                     <span class="project-category">${p.category || "Uncategorized"}</span>
                     <h3 class="project-title">${p.title}</h3>
                     <p class="project-desc">${p.description || ""}</p>
                     ${tech ? `<div class="project-tech">${tech}</div>` : ""}
-                    ${date ? `<div class="project-date"><i class="far fa-calendar-alt"></i> ${date}</div>` : ""}
-                    <a href="project-detail.html?id=${p.id}" class="btn-details">
+                    <div class="project-meta">
+                        ${date ? `<span class="meta-item"><i class="far fa-calendar-alt"></i> ${date}</span>` : ""}
+                        ${featuresCount ? `<span class="meta-item"><i class="fas fa-list-check"></i> ${featuresCount} features</span>` : ""}
+                    </div>
+                    <a href="project-detail.html?id=${p.id}" class="project-link">
                         <i class="fas fa-info-circle"></i> View Details
                     </a>
                 </div>
@@ -291,14 +369,8 @@ async function renderProjects(filter = "all") {
     })
     .join("");
 
-  // Click on card to navigate to detail page
-  document.querySelectorAll(".project-card").forEach((card) => {
-    card.addEventListener("click", function (e) {
-      if (e.target.closest(".btn-details") || e.target.closest("a")) return;
-      const id = parseInt(this.dataset.projectId);
-      window.location.href = `project-detail.html?id=${id}`;
-    });
-  });
+  // Attach zoom events to newly added images
+  attachZoomToImages();
 
   document
     .querySelectorAll(".project-card.fade-up")
