@@ -233,7 +233,7 @@ async function renderStats() {
 }
 
 // ============================================================
-// IMAGE ZOOM FUNCTIONALITY
+// IMAGE ZOOM
 // ============================================================
 const zoomOverlay = document.getElementById("imageZoom");
 const zoomImg = document.getElementById("imageZoomImg");
@@ -248,7 +248,6 @@ function openImageZoom(src) {
 function closeImageZoom() {
   zoomOverlay.classList.remove("active");
   document.body.style.overflow = "";
-  // Clear src to prevent flickering
   setTimeout(() => {
     zoomImg.src = "";
   }, 300);
@@ -262,32 +261,19 @@ document.addEventListener("keydown", function (e) {
   if (e.key === "Escape") closeImageZoom();
 });
 
-// Attach zoom to all images with class 'zoomable'
 function attachZoomToImages() {
-  // Thumbnails in project cards
   document.querySelectorAll(".project-thumb").forEach((img) => {
-    img.classList.add("zoomable");
     img.style.cursor = "zoom-in";
     img.removeEventListener("click", handleZoomClick);
     img.addEventListener("click", handleZoomClick);
   });
-
-  // Gallery images in project details (if any)
   document
     .querySelectorAll(".details-gallery img, .modal-gallery img")
     .forEach((img) => {
-      img.classList.add("zoomable");
       img.style.cursor = "zoom-in";
       img.removeEventListener("click", handleZoomClick);
       img.addEventListener("click", handleZoomClick);
     });
-
-  // Also handle overlay click on thumbnails
-  document.querySelectorAll(".project-overlay").forEach((overlay) => {
-    overlay.style.cursor = "zoom-in";
-    overlay.removeEventListener("click", handleOverlayZoom);
-    overlay.addEventListener("click", handleOverlayZoom);
-  });
 }
 
 function handleZoomClick(e) {
@@ -296,18 +282,8 @@ function handleZoomClick(e) {
   if (src) openImageZoom(src);
 }
 
-function handleOverlayZoom(e) {
-  e.stopPropagation();
-  const wrap = this.closest(".project-thumb-wrap");
-  const img = wrap ? wrap.querySelector(".project-thumb") : null;
-  if (img) {
-    const src = img.getAttribute("src");
-    if (src) openImageZoom(src);
-  }
-}
-
 // ============================================================
-// RENDER PROJECTS
+// RENDER PROJECTS (بدون أيقونة)
 // ============================================================
 let projectsData = [];
 
@@ -347,9 +323,6 @@ async function renderProjects(filter = "all") {
             <div class="project-card fade-up" style="transition-delay:${i * 0.05}s">
                 <div class="project-thumb-wrap">
                     <img src="${p.thumbnail || "public/images/placeholder.jpg"}" alt="${p.title}" class="project-thumb" loading="lazy" />
-                    <div class="project-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
                 </div>
                 <div class="project-body">
                     <span class="project-category">${p.category || "Uncategorized"}</span>
@@ -369,9 +342,7 @@ async function renderProjects(filter = "all") {
     })
     .join("");
 
-  // Attach zoom events to newly added images
   attachZoomToImages();
-
   document
     .querySelectorAll(".project-card.fade-up")
     .forEach((el) => observer.observe(el));

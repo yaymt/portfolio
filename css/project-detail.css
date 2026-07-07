@@ -13,7 +13,7 @@
 
 /* Back button */
 .project-detail-back {
-  margin-top: 30px;
+  margin-top: 40px;
   margin-bottom: 30px;
 }
 .project-detail-back .btn-outline {
@@ -30,6 +30,7 @@
   align-items: center;
   gap: 8px;
   text-decoration: none;
+  touch-action: manipulation;
 }
 .project-detail-back .btn-outline:hover {
   border-color: var(--accent);
@@ -85,7 +86,6 @@
   border-radius: var(--radius);
   margin-bottom: 24px;
   box-shadow: var(--shadow);
-  cursor: pointer;
 }
 
 .details-category {
@@ -194,7 +194,8 @@
   border-radius: var(--radius);
   border: 1px solid var(--border);
   transition: all var(--transition);
-  cursor: pointer;
+  cursor: zoom-in;
+  touch-action: none;
 }
 .details-gallery img:hover {
   transform: scale(1.04);
@@ -237,6 +238,7 @@
   font-size: 0.95rem;
   transition: all var(--transition);
   text-decoration: none;
+  touch-action: manipulation;
 }
 .details-links .link-github {
   background: #24292e;
@@ -290,6 +292,11 @@
   }
 }
 @media (max-width: 480px) {
+  .project-detail-back .btn-outline {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+  }
   .details-title {
     font-size: 1.5rem;
   }
@@ -298,5 +305,10 @@
   }
   .details-gallery img {
     height: 200px;
+  }
+  .details-links a {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 24px;
   }
 }

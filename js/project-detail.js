@@ -38,7 +38,7 @@ themeToggle.addEventListener("click", () => {
   }
 });
 
-// ===== IMAGE ZOOM (duplicate from main.js) =====
+// ===== IMAGE ZOOM =====
 const zoomOverlay = document.getElementById("imageZoom");
 const zoomImg = document.getElementById("imageZoomImg");
 const zoomClose = document.getElementById("imageZoomClose");
@@ -146,7 +146,6 @@ function buildDetailsHTML(project) {
     `
     : "";
 
-  // تحديث عنوان الصفحة
   document.getElementById("pageTitle").textContent =
     `${project.title} · Yousef Tawfiq`;
   document.querySelector('meta[name="description"]').content =
@@ -219,7 +218,6 @@ async function renderProjectDetail() {
   }
 
   container.innerHTML = buildDetailsHTML(project);
-  // Attach zoom after content is rendered
   attachZoomToDetailImages();
 }
 
@@ -229,5 +227,5 @@ document.getElementById("footerYear").textContent = new Date().getFullYear();
 // ===== INIT =====
 document.addEventListener("DOMContentLoaded", renderProjectDetail);
 
-// ===== RE-RENDER ON POPSTATE (Back/Forward) =====
+// ===== RE-RENDER ON POPSTATE =====
 window.addEventListener("popstate", renderProjectDetail);
