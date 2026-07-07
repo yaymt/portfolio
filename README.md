@@ -25,4 +25,4 @@ Configure your DNS and set the custom domain in your hosting provider settings.
 
 ---
 
-Designed for Yousef Tawfiq.
+Designed by Yousef Tawfiq.
