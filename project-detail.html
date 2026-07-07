@@ -19,9 +19,21 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/project-detail.css" />
+
+    <!-- إصلاح وميض الشاشة البيضاء -->
+    <script>
+      (function () {
+        const storedTheme = localStorage.getItem("theme") || "light";
+        if (storedTheme === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+          document.documentElement.removeAttribute("data-theme");
+        }
+      })();
+    </script>
   </head>
   <body class="project-detail-page">
-    <!-- Navigation -->
+    <!-- NAVIGATION -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
       <div class="container nav-container">
         <a href="/" class="nav-logo" aria-label="Home">YT</a>
@@ -37,16 +49,13 @@
       </div>
     </nav>
 
-    <!-- Main content -->
+    <!-- MAIN CONTENT -->
     <main class="container">
-      <!-- زر الرجوع - تم إصلاح الهيكل -->
       <div class="project-detail-back">
         <a href="/#projects" class="btn-outline">
-          <i class="fas fa-arrow-left"></i>
-          <span>Back to Projects</span>
+          <i class="fas fa-arrow-left"></i> Back to Projects
         </a>
       </div>
-
       <div id="projectDetailContent" class="project-detail-content">
         <p
           style="
@@ -60,21 +69,18 @@
       </div>
     </main>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer" role="contentinfo">
       <div class="container">
         <div class="footer-content">
           <p class="footer-name">
             &copy; <span id="footerYear"></span> Yousef Tawfiq
           </p>
-          <p class="footer-tagline">
-            Building the future, one line of code at a time.
-          </p>
         </div>
       </div>
     </footer>
 
-    <!-- Image Zoom Modal -->
+    <!-- IMAGE ZOOM MODAL -->
     <div class="image-zoom-overlay" id="imageZoom">
       <button
         class="image-zoom-close"

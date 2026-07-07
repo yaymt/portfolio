@@ -23,6 +23,7 @@ if (storedTheme === "dark") {
   document.documentElement.setAttribute("data-theme", "dark");
   themeIcon.className = "fas fa-sun";
 } else {
+  document.documentElement.removeAttribute("data-theme");
   themeIcon.className = "fas fa-moon";
 }
 themeToggle.addEventListener("click", () => {
@@ -189,7 +190,7 @@ async function renderProjectDetail() {
     container.innerHTML = `
             <div class="project-not-found">
                 <h2>No project specified</h2>
-                <p><a href="index.html#projects">← Back to projects</a></p>
+                <p><a href="/#projects">← Back to projects</a></p>
             </div>
         `;
     return;
@@ -200,7 +201,7 @@ async function renderProjectDetail() {
     container.innerHTML = `
             <div class="project-not-found">
                 <h2>Error loading projects</h2>
-                <p><a href="index.html#projects">← Back to projects</a></p>
+                <p><a href="/#projects">← Back to projects</a></p>
             </div>
         `;
     return;
@@ -211,7 +212,7 @@ async function renderProjectDetail() {
     container.innerHTML = `
             <div class="project-not-found">
                 <h2>Project not found</h2>
-                <p><a href="index.html#projects">← Back to projects</a></p>
+                <p><a href="/#projects">← Back to projects</a></p>
             </div>
         `;
     return;

@@ -21,6 +21,18 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- إصلاح وميض الشاشة البيضاء -->
+    <script>
+      (function () {
+        const storedTheme = localStorage.getItem("theme") || "light";
+        if (storedTheme === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+          document.documentElement.removeAttribute("data-theme");
+        }
+      })();
+    </script>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -160,16 +172,12 @@
                 <li>
                   <i class="fas fa-envelope"></i>
                   <div>
-                    <strong>Email</strong>
-                    <span id="contactEmail">yawfiq@outlook.com</span>
+                    <strong>Email</strong><span id="contactEmail"></span>
                   </div>
                 </li>
                 <li>
                   <i class="fas fa-phone-alt"></i>
-                  <div>
-                    <strong>Phone</strong>
-                    <span>+966 566 876 346</span>
-                  </div>
+                  <div><strong>Phone</strong><span>+966 566 876 346</span></div>
                 </li>
               </ul>
               <div class="contact-social">
@@ -189,7 +197,7 @@
           <p class="footer-name">
             &copy; <span id="footerYear"></span> Yousef Tawfiq
           </p>
-          <p class="footer-tagline">Building the future.</p>
+
           <div class="footer-social" id="footerSocial"></div>
         </div>
       </div>

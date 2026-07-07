@@ -11,60 +11,34 @@
   margin-top: auto;
 }
 
-/* ===== زر الرجوع - إعادة تصميم كامل ===== */
+/* Back button - إصلاح للجوال */
 .project-detail-back {
   margin-top: 40px;
   margin-bottom: 30px;
-  text-align: left; /* محاذاة افتراضية */
 }
-
-/* الرابط نفسه (الزر) */
 .project-detail-back .btn-outline {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 12px 28px;
   background: transparent;
   border: 2px solid var(--border);
-  border-radius: 40px;
   color: var(--text-primary);
-  font-size: 1rem;
+  padding: 10px 24px;
+  border-radius: 40px;
   font-weight: 500;
-  font-family: var(--font);
-  text-decoration: none;
-  cursor: pointer;
   transition: all var(--transition);
+  font-family: var(--font);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
   touch-action: manipulation;
-  white-space: nowrap; /* منع التفاف النص */
-  box-sizing: border-box;
-  line-height: 1.2;
 }
-
-/* أيقونة السهم */
-.project-detail-back .btn-outline i {
-  font-size: 1rem;
-  flex-shrink: 0; /* تمنع الأيقونة من التقلص */
-  transition: transform 0.2s ease;
-}
-
-/* النص */
-.project-detail-back .btn-outline span {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-/* تأثير hover */
 .project-detail-back .btn-outline:hover {
   border-color: var(--accent);
   color: var(--accent);
   transform: translateX(-4px);
 }
-.project-detail-back .btn-outline:hover i {
-  transform: translateX(-4px);
-}
 
-/* ===== باقي التنسيقات كما هي (لم تتغير) ===== */
+/* Content & Not found */
 .project-detail-content {
   padding: 20px 0 60px;
 }
@@ -81,7 +55,7 @@
   text-decoration: underline;
 }
 
-/* Hide main homepage sections */
+/* Hide main homepage sections on this page */
 .project-detail-page .hero,
 .project-detail-page .about,
 .project-detail-page .skills,
@@ -91,7 +65,7 @@
   display: none !important;
 }
 
-/* Hide main navigation links */
+/* Hide main navigation links (keep logo and theme toggle) */
 .project-detail-page .navbar .nav-links {
   display: none !important;
 }
@@ -113,6 +87,7 @@
   margin-bottom: 24px;
   box-shadow: var(--shadow);
 }
+
 .details-category {
   display: inline-block;
   background: var(--accent);
@@ -124,11 +99,13 @@
   text-transform: uppercase;
   margin-bottom: 12px;
 }
+
 .details-title {
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 4px;
 }
+
 .details-date {
   font-size: 0.95rem;
   color: var(--text-secondary);
@@ -137,12 +114,14 @@
   align-items: center;
   gap: 8px;
 }
+
 .details-description {
   font-size: 1.1rem;
   line-height: 1.9;
   color: var(--text-secondary);
   margin-bottom: 28px;
 }
+
 .details-section-title {
   font-size: 1.4rem;
   font-weight: 700;
@@ -161,6 +140,7 @@
   background: var(--accent);
   border-radius: 4px;
 }
+
 .details-tech {
   display: flex;
   flex-wrap: wrap;
@@ -182,6 +162,7 @@
   color: #fff;
   border-color: var(--accent);
 }
+
 .details-features {
   list-style: none;
   margin-bottom: 24px;
@@ -199,6 +180,7 @@
   color: var(--accent);
   font-weight: 700;
 }
+
 .details-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -220,6 +202,7 @@
   box-shadow: var(--shadow-hover);
   border-color: var(--accent);
 }
+
 .details-video {
   margin: 20px 0 24px;
   border-radius: var(--radius);
@@ -236,6 +219,7 @@
   height: 100%;
   border: none;
 }
+
 .details-links {
   display: flex;
   flex-wrap: wrap;
@@ -309,56 +293,46 @@
 }
 
 @media (max-width: 480px) {
-  /* ===== إصلاح كامل للزر في الجوال ===== */
+  /* إعادة تصميم زر الرجوع بالكامل للجوال */
   .project-detail-back {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center; /* توسيط الزر في الجوال */
+    margin-top: 16px;
+    margin-bottom: 16px;
+    text-align: center;
   }
-
   .project-detail-back .btn-outline {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    padding: 10px 18px;
-    font-size: 0.85rem;
+    gap: 6px;
+    padding: 8px 16px;
+    font-size: 0.8rem;
     border: 2px solid var(--border);
     border-radius: 40px;
     background: transparent;
     color: var(--text-primary);
     font-weight: 500;
-    font-family: var(--font);
-    text-decoration: none;
-    cursor: pointer;
     transition: all var(--transition);
+    font-family: var(--font);
+    cursor: pointer;
+    text-decoration: none;
     touch-action: manipulation;
     white-space: nowrap;
+    max-width: 95%;
+    overflow: hidden;
+    text-overflow: ellipsis;
     box-sizing: border-box;
-    max-width: 100%;
-    line-height: 1.2;
-  }
-
-  .project-detail-back .btn-outline i {
-    font-size: 0.8rem;
-    flex-shrink: 0;
-  }
-
-  .project-detail-back .btn-outline span {
-    display: inline-block;
     vertical-align: middle;
   }
-
+  .project-detail-back .btn-outline i {
+    font-size: 0.75rem;
+    flex-shrink: 0;
+  }
   .project-detail-back .btn-outline:hover {
     border-color: var(--accent);
     color: var(--accent);
     transform: translateY(-2px);
   }
-  .project-detail-back .btn-outline:hover i {
-    transform: translateX(-3px);
-  }
 
-  /* باقي تحسينات الجوال */
   .details-title {
     font-size: 1.5rem;
   }

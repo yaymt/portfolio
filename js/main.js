@@ -31,16 +31,18 @@ function $$(sel, parent = document) {
 }
 
 // ============================================================
-// DARK MODE
+// DARK MODE (للتزامن مع الإعداد المسبق)
 // ============================================================
 const themeToggle = document.getElementById("themeToggle");
 const themeIcon = document.getElementById("themeIcon");
+// نقرأ من localStorage مرة أخرى للتأكد (مع أننا طبقناها في head)
 const storedTheme = localStorage.getItem("theme") || "light";
 
 if (storedTheme === "dark") {
   document.documentElement.setAttribute("data-theme", "dark");
   themeIcon.className = "fas fa-sun";
 } else {
+  document.documentElement.removeAttribute("data-theme");
   themeIcon.className = "fas fa-moon";
 }
 
@@ -233,7 +235,7 @@ async function renderStats() {
 }
 
 // ============================================================
-// IMAGE ZOOM
+// IMAGE ZOOM FUNCTIONALITY
 // ============================================================
 const zoomOverlay = document.getElementById("imageZoom");
 const zoomImg = document.getElementById("imageZoomImg");
@@ -267,13 +269,6 @@ function attachZoomToImages() {
     img.removeEventListener("click", handleZoomClick);
     img.addEventListener("click", handleZoomClick);
   });
-  document
-    .querySelectorAll(".details-gallery img, .modal-gallery img")
-    .forEach((img) => {
-      img.style.cursor = "zoom-in";
-      img.removeEventListener("click", handleZoomClick);
-      img.addEventListener("click", handleZoomClick);
-    });
 }
 
 function handleZoomClick(e) {
@@ -283,7 +278,7 @@ function handleZoomClick(e) {
 }
 
 // ============================================================
-// RENDER PROJECTS (بدون أيقونة)
+// RENDER PROJECTS
 // ============================================================
 let projectsData = [];
 
@@ -343,6 +338,7 @@ async function renderProjects(filter = "all") {
     .join("");
 
   attachZoomToImages();
+
   document
     .querySelectorAll(".project-card.fade-up")
     .forEach((el) => observer.observe(el));

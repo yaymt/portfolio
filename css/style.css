@@ -183,6 +183,7 @@ p {
   border: none;
   cursor: pointer;
   padding: 4px;
+  touch-action: manipulation;
 }
 .hamburger {
   width: 26px;
@@ -982,16 +983,15 @@ p {
   }
 }
 @media (max-width: 480px) {
-  /* تحسينات مخصصة للجوال الصغير */
   .hero {
     padding: 30px 0 25px;
   }
   .hero-name {
-    font-size: 1.8rem; /* تصغير بسيط */
+    font-size: 1.8rem;
     margin-bottom: 2px;
   }
   .hero-title {
-    font-size: 0.95rem; /* تصغير */
+    font-size: 0.95rem;
   }
   .hero-avatar {
     width: 90px;
@@ -1027,7 +1027,6 @@ p {
     font-size: 0.9rem;
     padding: 10px 24px;
   }
-
   .section {
     padding: 40px 0;
   }
@@ -1035,14 +1034,12 @@ p {
     font-size: 1.6rem;
     margin-bottom: 24px;
   }
-
   .about-text {
     font-size: 1rem;
   }
   .about-info {
     padding: 20px;
   }
-
   .skill-item {
     padding: 8px 16px;
     font-size: 0.85rem;
@@ -1052,7 +1049,6 @@ p {
     font-size: 1.1rem;
     width: 22px;
   }
-
   .project-filters {
     gap: 8px;
     margin-bottom: 24px;
@@ -1076,7 +1072,6 @@ p {
     padding: 12px 20px;
     font-size: 0.85rem;
   }
-
   .cert-grid {
     gap: 16px;
   }
@@ -1090,7 +1085,6 @@ p {
   .cert-name {
     font-size: 0.95rem;
   }
-
   .contact-info {
     padding: 24px 16px;
   }
@@ -1112,7 +1106,6 @@ p {
     font-size: 1.3rem;
     gap: 16px;
   }
-
   .footer {
     padding: 30px 0;
   }
@@ -1122,7 +1115,6 @@ p {
   .footer-tagline {
     font-size: 0.85rem;
   }
-
   .image-zoom-overlay {
     padding: 20px;
   }
